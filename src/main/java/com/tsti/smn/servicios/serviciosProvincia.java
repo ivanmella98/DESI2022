@@ -1,8 +1,13 @@
 package com.tsti.smn.servicios;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-@Service
-public class serviciosProvincia {
+import com.tsti.smn.entidades.Provincia;
 
+
+public interface serviciosProvincia {
+	List<Provincia> getProvincias();
+	void guardarProvincia(Provincia p);
+	void eliminarProvincia(Provincia p);
+	void editarProvincia(Provincia p_vieja,Provincia p);
 }

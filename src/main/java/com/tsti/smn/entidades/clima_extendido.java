@@ -22,7 +22,9 @@ public class clima_extendido {
 	private Date fecha;
 	private double probabilidad_lluvia;
 	private double cantidad_prevista;
-	private String descripcion_pronostico; 
+	private String descripcion_pronostico;
+
+	private int codigo_postal;
 	
 	public clima_extendido() {};
 	
@@ -34,6 +36,13 @@ public class clima_extendido {
 		this.ciudad=ciudad;
 	};
 	
+	
+	public void setCodigo_postal(int codigo_postal) {
+		this.codigo_postal=codigo_postal;
+	}
+	public void setId(int id) {
+		this.id=id;
+	}
 	public void setFecha(Date fecha) {
 		this.fecha=fecha;
 	}
@@ -52,7 +61,12 @@ public class clima_extendido {
 	}
 
 	
-	
+	public int getCodigo_postal() {
+		return this.codigo_postal;
+	}
+	public int getId() {
+		return this.id;
+	}
 	public Date getFecha() {
 		return this.fecha;
 	}

@@ -1,6 +1,9 @@
 package com.tsti.smn.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.tsti.smn.entidades.Ciudad;
@@ -8,5 +11,14 @@ import com.tsti.smn.entidades.clima_extendido;
 
 @Repository
 public interface dao_clima_extendido extends JpaRepository<clima_extendido , Ciudad>{
+	
+	@Query("SELECT c FROM clima_extendido c WHERE c.id like ?1")
+	List<clima_extendido> findById( int id);
+	
 
+	
+	@Query("DELETE FROM clima_extendido  WHERE id like ?1")
+	void deleteById(int id);
+
+	
 }

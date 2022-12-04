@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+<body>
+	
+	<form th:object="${clima_extendido}" th:action="@{/climaExtendidoEditar}" method="post">
+		
+	    <div class="form-group row">
+		    <div class="col-sm-2">Elija una ciudad para editar su pronostico</div>
+			  	<div class="col-sm-5">
+			      <select th:field="*{codigo_postal}" id="ciudad" class="form-control" >
+			      	<option th:each="ciudad : ${ciudades}" th:value="${ciudad.codigo_postal}"  th:text="${ciudad.nombre}" ></option>
+			      </select>
+			      	
+			</div>
+			<div class="form-group row">
+					  <div class="col-sm-4">
+					     <button type="submit" name="action" value="seleccionar" class="btn btn-primary">Seleccionar</button>
+					  </div>
+				</div>
+				
+		</div>
+	</form>
+		<div class="form-group row">
+					<div class="col-sm-12">
+					  
+					<table>
+						    <thead>
+						    <tr>
+						        <th>Fecha</th>
+						        <th>Probabilidad de lluvias</th>
+						        <th>Cantidad lluvia prevista</th>
+						        <th>Descripcion pronostico</th>
+						    </tr>
+						    </thead>
+						    <tbody>
+						    <tr th:each="clima_extendido : ${climas_extendidos}">
+						        <td th:text="${clima_extendido.fecha}"></td>
+						        <td th:text="${clima_extendido.probabilidad_lluvia}"></td>
+						        <td th:text="${clima_extendido.cantidad_prevista}"></td>
+						        <td th:text="${clima_extendido.descripcion_pronostico}"></td>
+						    </tr>
+						    </tbody>
+						</table> 
+					
+					</div>
+				</div>
+			      					      
+	
+		
+	 
+
+	
+		 
+		
+	
+</body>
+</html>
