@@ -11,7 +11,7 @@ public interface serviciosClima_extendido {
 	clima_extendido getClimaExtendido(int id);
 	void guardarClimaExtendidoNuevo(clima_extendido c_e);
 	void eliminarClimaExtendidoNuevo(int id);
-	void editarClimaExtendidoNuevo(clima_extendido c_e_viejo,clima_extendido c_e);
+	void editarClimaExtendidoNuevo(clima_extendido c_e);
 	List<clima_extendido>getPronosticoExtendidoCiudad(int codigo_postal);
 	
 	

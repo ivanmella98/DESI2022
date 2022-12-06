@@ -6,30 +6,41 @@
 
 <body>
 	
-	<form th:object="${clima_extendido}" th:action="@{/climaExtendidoEditar}" method="post">
+	<form th:object="${clima_extendido}" th:action="@{/climaExtendidoEditar}" method="get">
 		
-	    <div class="form-group row">
-		    <div class="col-sm-2">Elija una ciudad para editar su pronostico</div>
-			  	<div class="col-sm-5">
-			      <select th:field="*{codigo_postal}" id="ciudad" class="form-control" >
-			      	<option th:each="ciudad : ${ciudades}" th:value="${ciudad.codigo_postal}"  th:text="${ciudad.nombre}" ></option>
-			      </select>
-			      	
-			</div>
+
+		
+		
+	  	<div class="form-group row">
+	    
+	    <div class="col-sm-2">Lista Ciudades</div>
+		    
+		  
+		    <div class="col-sm-10">
+		     
+		      <select th:field="*{codigo_postal}" id="ciudad" class="form-control" >
+		      	<option th:each="ciudad : ${ciudades}" th:value="${ciudad.codigo_postal}"  th:text="${ciudad.nombre}" ></option>
+		      </select>
+		     
+		    </div>
+		  </div>
+		 
+			
+			
 			<div class="form-group row">
 					  <div class="col-sm-4">
 					     <button type="submit" name="action" value="seleccionar" class="btn btn-primary">Seleccionar</button>
 					  </div>
 				</div>
-				
-		</div>
-	</form>
-		<div class="form-group row">
-					<div class="col-sm-12">
+			
+			
+			<div class="form-group row">
+			<div class="col-sm-10">
 					  
 					<table>
 						    <thead>
 						    <tr>
+						        
 						        <th>Fecha</th>
 						        <th>Probabilidad de lluvias</th>
 						        <th>Cantidad lluvia prevista</th>
@@ -42,20 +53,28 @@
 						        <td th:text="${clima_extendido.probabilidad_lluvia}"></td>
 						        <td th:text="${clima_extendido.cantidad_prevista}"></td>
 						        <td th:text="${clima_extendido.descripcion_pronostico}"></td>
+						        <td><a th:href="@{/editarClimaExtendido/edit/{id}(id=${clima_extendido.id})}" class="btn btn-primary">editar</a></td>
+	        
 						    </tr>
 						    </tbody>
 						</table> 
 					
 					</div>
-				</div>
-			      					      
+		</div>
+				
+	</form>
 	
+	
+	<!-- 
+	<form th:object="${clima_extendido_seleccion}" th:action="@{/editarClimaExtendido/edit/{id}}" method ="get">
 		
-	 
+	</form>
+	-->
+		
+			
+		
+	
+	
 
-	
-		 
-		
-	
 </body>
 </html>

@@ -33,6 +33,7 @@ public class controladorRegistrarClimaExtendido {
 	}
 	
 	
+	
 	@PostMapping("/climaExtendidoRegistrar")
 	public String nuevoClimaExtendido(@ModelAttribute("clima_extendido") @Valid  clima_extendido clima_extendido,Model modelo) 
 	{

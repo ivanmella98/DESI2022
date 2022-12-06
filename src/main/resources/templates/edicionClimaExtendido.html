@@ -6,13 +6,15 @@
 
 <body>
  	
+ 	
  	<div>
- 		<form th:object="${clima_extendido}" th:action="@{/climaExtendidoRegistrar}" method="post">
-		 
-		
+ 		<form th:object="${clima_extendido_viejo}" th:action="@{/agregarClimaModificado}" method="post">
 		 
 		 
-		 <div class="form-group row">
+		 
+		 	<input type="hidden" th:field="*{id}" value="*{id}">
+		 
+			 <div class="form-group row">
 		    <div class="col-sm-2">Lista Ciudades</div>
 		    
 		  
@@ -25,38 +27,38 @@
 		    </div>
 		  </div>
 		  
-		 
+		  
 		  <div class="form-group row">
 		    <label for="fecha" class="col-sm-2 col-form-label">Fecha</label>
 		    <div class="col-sm-10">
-		      <input th:field="*{fecha}" type="date" class="form-control" id="fecha" placeholder="YY/MM/AA">
+		      <input th:field="*{fecha}" type="date" class="form-control" id="fecha" placeholder="">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group row">
 		    <label for="probabilidad_lluvia" class="col-sm-2 col-form-label">Probabilidad Lluvias</label>
 		    <div class="col-sm-10">
-		      <input th:field="*{probabilidad_lluvia}"  type="text" class="form-control" id="probabilidad_lluvia" placeholder="Probabilidad de lluvias %">
+		      <input th:field="*{probabilidad_lluvia}"  type="text" class="form-control" id="probabilidad_lluvia" placeholder="">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group row">
 		    <label for="cantidad_prevista" class="col-sm-2 col-form-label">Cantidad lluvias</label>
 		    <div class="col-sm-10">
-		      <input th:field="*{cantidad_prevista}"  type="text" class="form-control" id="cantidad_prevista" placeholder="Cantidad lluvia prevista (mm)">
+		      <input th:field="*{cantidad_prevista}"  type="text" class="form-control" id="cantidad_prevista" placeholder="">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group row">
 		    <label for="descripcion_pronostico" class="col-sm-2 col-form-label">Descripcion pronostico</label>
 		    <div class="col-sm-10">
-		      <input th:field="*{descripcion_pronostico}" type="text" class="form-control" id="descripcion_pronostico" placeholder="descripcion pronostico">
+		      <input th:field="*{descripcion_pronostico}" type="text" class="form-control" id="descripcion_pronostico" placeholder="">
 		    </div>
 		  </div>
 		  
 		  <div class="form-group row">
 		    <div class="col-sm-10">
-		      <button type="submit" name="action" value="registrar" class="btn btn-primary">Registrar</button>
+		      <button type="submit" name="action" value="modificar" class="btn btn-primary">Modificar</button>
 		    </div>
 		  </div>
 		</form>

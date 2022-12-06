@@ -20,7 +20,7 @@ public class serviciosClima_extendidoImp implements serviciosClima_extendido{
 	
 	@Override
 	public clima_extendido getClimaExtendido(int id){
-		return repo.findById(id).get(0);
+		return repo.findByIdClima(id);
 	}
 	
 	@Override
@@ -35,9 +35,8 @@ public class serviciosClima_extendidoImp implements serviciosClima_extendido{
 	}
 	
 	@Override
-	public void editarClimaExtendidoNuevo(clima_extendido c_e_viejo,clima_extendido c_e){
-		repo.deleteById(c_e_viejo.getId());
-		repo.save(c_e);
+	public void editarClimaExtendidoNuevo(clima_extendido c_e){
+			repo.save(c_e);
 	}
 	@Override
 	public List<clima_extendido>getPronosticoExtendidoCiudad(int codigo_postal){
