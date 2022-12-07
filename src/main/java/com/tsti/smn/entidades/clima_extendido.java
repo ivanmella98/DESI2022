@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 
 
@@ -19,16 +23,26 @@ public class clima_extendido {
 	
 	@ManyToOne
 	private Ciudad ciudad;
+	@Future(message = "Debe ingresar una fecha futura")
+	@NotNull(message="Ingrese una fecha")
 	private Date fecha;
-	private double probabilidad_lluvia;
-	private double cantidad_prevista;
+	@NotNull
+	@PositiveOrZero(message = "Debe ingresar una valor positivo o cero")
+	@Max(100)
+	
+	private int probabilidad_lluvia;
+	@NotNull
+	@PositiveOrZero(message = "Debe ingresar una valor positivo o cero")
+	private int cantidad_prevista;
+	@NotNull
 	private String descripcion_pronostico;
-
+	@NotNull  
 	private int codigo_postal;
+	
 	
 	public clima_extendido() {};
 	
-	public clima_extendido(Ciudad ciudad, Date f, double p_ll, double c_p, String d_p) {
+	public clima_extendido(Ciudad ciudad, Date f, int p_ll, int c_p, String d_p) {
 		this.cantidad_prevista=c_p;
 		this.descripcion_pronostico=d_p;
 		this.fecha = f;
@@ -46,11 +60,11 @@ public class clima_extendido {
 	public void setFecha(Date fecha) {
 		this.fecha=fecha;
 	}
-	public void setProbabilidad_lluvia(double p_ll) {
+	public void setProbabilidad_lluvia(int p_ll) {
 		this.probabilidad_lluvia=p_ll;
 	}
 	
-	public void setCantidad_prevista(double c_p) {
+	public void setCantidad_prevista(int c_p) {
 		this.cantidad_prevista=c_p;
 	}
 	public void setDescripcion_pronostico(String d_p) {
@@ -70,11 +84,11 @@ public class clima_extendido {
 	public Date getFecha() {
 		return this.fecha;
 	}
-	public double getProbabilidad_lluvia() {
+	public int getProbabilidad_lluvia() {
 		return this.probabilidad_lluvia;
 	}
 	
-	public double getCantidad_prevista() {
+	public int getCantidad_prevista() {
 		return this.cantidad_prevista;
 	}
 	public String getDescripcion_pronostico() {

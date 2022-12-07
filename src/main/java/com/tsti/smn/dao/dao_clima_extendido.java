@@ -1,5 +1,6 @@
 package com.tsti.smn.dao;
 
+import java.sql.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -17,6 +18,11 @@ public interface dao_clima_extendido extends JpaRepository<clima_extendido , Ciu
 	
 	@Query("SELECT c FROM clima_extendido c WHERE c.codigo_postal like ?1")
 	List<clima_extendido> findById( int id);
+	
+
+	@Query("SELECT c FROM clima_extendido c WHERE c.codigo_postal like ?1 AND c.fecha>?2")
+	List<clima_extendido> findByIdAndDate( int id, Date a );
+	
 	
 	@Transactional
 	@Modifying

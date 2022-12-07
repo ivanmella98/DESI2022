@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="main.css"/>
   <body> 
 	
    <div >
@@ -8,8 +10,8 @@
     </div>
     	
     	<ul>
-		    <li><a th:href="registrarClimaExtendido">Registrar pronostico extendido</a></li>
-		    <li><a th:href="editarClimaExtendido">Editar pronostico extendido</a></li>
+		    <li><a th:href="registrarClimaExtendido" class="btn btn-primary margenes" >Registrar pronostico extendido</a></li>
+		    <li><a th:href="editarClimaExtendido" class="btn btn-primary margenes">Editar pronostico extendido</a></li>
     	</ul>
 
         

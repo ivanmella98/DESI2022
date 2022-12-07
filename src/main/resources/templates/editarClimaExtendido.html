@@ -3,7 +3,7 @@
 <head>
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
 <body>
 	
 	<form th:object="${clima_extendido}" th:action="@{/climaExtendidoEditar}" method="get">
@@ -11,45 +11,42 @@
 
 		
 		
-	  	<div class="form-group row">
+	  	<div class="form-group row" align="center" >
 	    
-	    <div class="col-sm-2">Lista Ciudades</div>
-		    
-		  
-		    <div class="col-sm-10">
-		     
-		      <select th:field="*{codigo_postal}" id="ciudad" class="form-control" >
-		      	<option th:each="ciudad : ${ciudades}" th:value="${ciudad.codigo_postal}"  th:text="${ciudad.nombre}" ></option>
-		      </select>
-		     
-		    </div>
-		  </div>
+		    <div class="col-sm-10" >Lista Ciudades</div>
+			    
+			<div class="col-sm-10 " align="center" >
+			     <tr>
+			      <td><select th:field="*{codigo_postal}"  id="ciudad" class="form-control" >
+			      	
+			      	<option th:each="ciudad : ${ciudades}" th:value="${ciudad.codigo_postal}"  th:text="${ciudad.nombre}" ></option>
+			      </select></td>
+			     </tr>
+			     
+			     <button type="submit" name="action" value="seleccionar" class="btn btn-primary">Seleccionar</button>
+			
+			</div>     
+			
+		 </div>
 		 
 			
+			<div class="form-group row " >
 			
-			<div class="form-group row">
-					  <div class="col-sm-4">
-					     <button type="submit" name="action" value="seleccionar" class="btn btn-primary">Seleccionar</button>
-					  </div>
-				</div>
-			
-			
-			<div class="form-group row">
-			<div class="col-sm-10">
-					  
-					<table>
+				<div class = "col-sm-10 " >	  
+					<table border="1px solid black" align="center" >
 						    <thead>
 						    <tr>
 						        
-						        <th>Fecha</th>
+						        <th colspan="5">Fecha </th>
 						        <th>Probabilidad de lluvias</th>
 						        <th>Cantidad lluvia prevista</th>
 						        <th>Descripcion pronostico</th>
+						    	
 						    </tr>
 						    </thead>
 						    <tbody>
 						    <tr th:each="clima_extendido : ${climas_extendidos}">
-						        <td th:text="${clima_extendido.fecha}"></td>
+						        <td colspan="5" th:text="${clima_extendido.fecha}"></td>
 						        <td th:text="${clima_extendido.probabilidad_lluvia}"></td>
 						        <td th:text="${clima_extendido.cantidad_prevista}"></td>
 						        <td th:text="${clima_extendido.descripcion_pronostico}"></td>
@@ -59,18 +56,17 @@
 						    </tbody>
 						</table> 
 					
-					</div>
+			</div>>
 		</div>
 				
 	</form>
 	
+		<div class="col-sm-10" align="center" >
+ 			<a th:href="climaExtendidoRE" class="btn btn-primary">Volver</a>
+		</div>
 	
-	<!-- 
-	<form th:object="${clima_extendido_seleccion}" th:action="@{/editarClimaExtendido/edit/{id}}" method ="get">
-		
-	</form>
-	-->
-		
+	
+	
 			
 		
 	

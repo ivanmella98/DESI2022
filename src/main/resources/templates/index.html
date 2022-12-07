@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="main.css"/>
   <body> 
 	
    <div >
-        <h1>Bienvenido al TP 2 de DESI POR HOME</h1>
+        <h1>Bienvenido al TP 2 de DESI </h1>
         <h2>
             <span th:text="'Integrantes: Aravena - Bruno - Mella - Lazarte'"></span>
         </h2>
     </div>
     	
     	<h2>
-            <span th:text="'Historias de usuario implementadas'"></span>
+            <span th:text="'Historias de usuario implementadas:'"></span>
         </h2>
+        
     	<ul>
-		    <li><a th:href="climaRE">Registrar/Editar clima</a></li>
-		    <li><a th:href="climaExtendidoRE">Registrar/Editar Pronostico extendido</a></li>
-		    <li><a th:href="eventoMeteorologicoRegistrarEditar">Registrar/Editar Evento Meteorologico</a></li>
-		    <li><a th:href="climaConsultar">Consultar Clima</a></li>
+		    <li><a th:href="climaRE" class="btn btn-primary margenes" >Registrar/Editar clima</a></li>
+		    <li><a th:href="climaExtendidoRE" class="btn btn-primary margenes" >Registrar/Editar Pronostico extendido</a></li>
+		    <li><a th:href="eventoMeteorologicoRegistrarEditar" class="btn btn-primary margenes" >Registrar/Editar Evento Meteorologico</a></li>
+		    <li><a th:href="climaConsultar" class="btn btn-primary margenes" >Consultar Clima</a></li>
     	</ul>
 
         
