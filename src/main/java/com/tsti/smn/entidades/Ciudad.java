@@ -13,8 +13,8 @@ public class Ciudad {
 	
 	
 	
-	/**atributos
-	 * */
+	//atributos
+	 
 	@Id
 	private Integer codigo_postal;
 	
@@ -30,8 +30,8 @@ public class Ciudad {
 	
 	
 
-	/**constructores
-	 * */
+	//constructores
+	 
 	
 	public Ciudad () {};
 	public Ciudad (String nombre, Provincia provincia, int c_p, Clima clima, String estado, List<clima_extendido>p_e) {
@@ -43,8 +43,8 @@ public class Ciudad {
 	}
 	
 	
-	/**getters
-	 * */
+	//setters
+	 
 	public void setNombre (String nombre) {
 		this.nombre = nombre;
 	}
@@ -66,8 +66,8 @@ public class Ciudad {
 	
 
 
-	/**setters
-	 * */
+	//getters
+	 
 	public List<clima_extendido> getPronostico_extendido(){
 		return this.pronostico_extendido;
 	}

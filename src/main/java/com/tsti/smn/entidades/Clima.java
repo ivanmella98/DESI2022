@@ -12,6 +12,8 @@ import javax.persistence.Id;
 @Entity
 public class Clima {
 	
+	
+	//atributos
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private int id;
@@ -21,10 +23,8 @@ public class Clima {
 	private Date fecha_actual;
 	
 	
-	/**Constructores
-	 * 
-	 * */
-	
+	//Constructores
+	 
 	public Clima(){};
 	public Clima(double t_a, String e_a, double h, List<clima_extendido>p_e, Date f_a){
 		this.temp_actual = t_a;
@@ -36,10 +36,8 @@ public class Clima {
 	
 	
 	
-	/**Setters
-	 * 
-	 * */
-	
+	//Getters
+	 
 	public double getTemp_actual() {
 		return this.temp_actual;
 	}
@@ -57,9 +55,7 @@ public class Clima {
 	
 	
 	
-	/**Setters
-	 * 
-	 * */
+	//Setters
 	
 	public void setTemp_actual(double t_a) {
 		this.temp_actual = t_a;

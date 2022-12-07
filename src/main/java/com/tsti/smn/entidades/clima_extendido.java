@@ -17,6 +17,10 @@ import javax.validation.constraints.PositiveOrZero;
 @Entity
 public class clima_extendido {
 	
+	
+	
+	//atributos 
+	
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	private int id;
@@ -40,6 +44,8 @@ public class clima_extendido {
 	private int codigo_postal;
 	
 	
+	
+	//constructores
 	public clima_extendido() {};
 	
 	public clima_extendido(Ciudad ciudad, Date f, int p_ll, int c_p, String d_p) {
@@ -50,6 +56,8 @@ public class clima_extendido {
 		this.ciudad=ciudad;
 	};
 	
+	
+	//setters
 	
 	public void setCodigo_postal(int codigo_postal) {
 		this.codigo_postal=codigo_postal;
@@ -75,6 +83,7 @@ public class clima_extendido {
 	}
 
 	
+	//getters
 	public int getCodigo_postal() {
 		return this.codigo_postal;
 	}

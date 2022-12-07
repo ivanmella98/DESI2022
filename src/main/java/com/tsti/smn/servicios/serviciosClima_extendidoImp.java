@@ -24,6 +24,9 @@ public class serviciosClima_extendidoImp implements serviciosClima_extendido{
 		return repo.findByIdClima(id);
 	}
 	
+	
+	
+	//para guardar el cliente me aseguro que ademas de pasar el @Valid tambien supere la exception 
 	@Override
 	public void guardarClimaExtendidoNuevo(clima_extendido c_e) throws Exception{
 		List<clima_extendido> climas = repo.findById( c_e.getCodigo_postal());
@@ -39,8 +42,6 @@ public class serviciosClima_extendidoImp implements serviciosClima_extendido{
 		else {
 			throw new Exception("Ya existe un pronostico para la fecha y ciudad ingresados");
 		}
-		
-		
 	}
 	
 	

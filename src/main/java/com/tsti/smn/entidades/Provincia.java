@@ -12,10 +12,8 @@ import javax.persistence.OneToMany;
 public class Provincia {
 	
 	
-	/**atributos
-	 * 
-	 */
-	
+	//atributos
+	 
 	@Id
 	@GeneratedValue( strategy = GenerationType.IDENTITY)
 	public int id;
@@ -25,10 +23,8 @@ public class Provincia {
 	public List<Ciudad>ciudades;
 	
 	
-	/**constructores
-	 * 
-	 */
-
+	//constructores
+	 
 	public Provincia() {};
 	public Provincia(String nombre, int id, List<Ciudad>ciudades) {
 		this.nombre=nombre;
@@ -36,10 +32,8 @@ public class Provincia {
 		this.ciudades=ciudades;
 	}
 	
-	/**getters
-	 * 
-	 */
-	
+	//getters
+	 
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -51,10 +45,8 @@ public class Provincia {
 		return this.ciudades;
 	}
 	
-	/**setters
-	 * 
-	 */
-	
+	//setters
+	 
 	public void setNombre(String nombre) {
 		this.nombre=nombre;
 	}

@@ -14,6 +14,10 @@ public class serviciosCiudadImp implements serviciosCiudad{
 	@Autowired
 	dao_Ciudad repo;
 	
+	
+	//servicios de clima extendido
+	
+	
 	@Override
 	public List<Ciudad> getCiudades(){
 		return repo.findAll();
